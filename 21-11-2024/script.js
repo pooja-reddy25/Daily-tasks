@@ -137,3 +137,30 @@ function anagrams(str1,str2){
 console.log(anagrams("listen", "silent"));  
 console.log(anagrams("hello", "world")); 
 console.log(anagrams("evil", "vile"));
+
+
+//Basic Calculator
+function Calculator(num1,num2,operator){
+    let result1;
+     if(operator === '+'){
+        return num1+num2;
+     }else if(operator === '-'){
+        return num1-num2;
+     }else if(operator === '*'){
+        return num1*num2;
+     }else if(operator === '/'){
+        if(num2 === 0){
+            return 'Division error'
+        }
+        return num1/num2;
+     }else{
+        return 'Error! Invalid Operator'
+     }
+     return result1;
+}
+console.log(Calculator(2,3,'+'));
+console.log(Calculator(5,3,'-'));
+console.log(Calculator(5,6,'*'));
+console.log(Calculator(10,5,'/')); 
+console.log(Calculator(10,0,'/')); 
+console.log(Calculator(10,5,'%')); 
