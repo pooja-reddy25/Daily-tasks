@@ -50,3 +50,32 @@ try {
 } catch (error) {
     console.error(error.message);
 }
+
+
+// Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.
+// The three functions are:
+// increment() increases the current value by 1 and then returns it.
+// decrement() reduces the current value by 1 and then returns it.
+// reset() sets the current value to init and then returns it.
+
+function createCounter1(init){
+    let currentvalue = init;
+    return{
+        increment : function(){
+            currentvalue+=1;
+            return currentvalue;
+        },
+        decrement : function(){
+            currentvalue-=1;
+            return currentvalue;
+        },
+        reset : function(){
+            currentvalue = init;
+            return currentvalue;
+        }
+    };
+}
+const integer = createCounter1(5);
+console.log(integer.increment());
+console.log(integer.decrement());
+console.log(integer.reset());
