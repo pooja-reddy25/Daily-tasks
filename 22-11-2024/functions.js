@@ -86,3 +86,31 @@ function normalize1(date){
 console.log(normalize1('15-1-1997'));
 
 
+//fahrenheit
+function toFahrenheit(celsius){
+    return (celsius * 9 / 5) + 32;
+    }
+console.log(toFahrenheit(32));
+
+//MATH.POW and MATH.SQRT
+function hypotenuse(a,b){
+    let cSquare = Math.pow(a,2) + Math.pow(b,2);
+    return Math.sqrt(cSquare);
+    }
+console.log(hypotenuse(3,4));
+
+//MAX AND MIN
+function midrange(a,b,c){
+    let min = Math.min(a,b,c);
+    let max = Math.max(a,b,c);
+    return (max+min)/2;
+    }
+console.log(midrange(2,3,4));
+
+//NUMBER METHODS
+function dice(){
+    let x = Math.random() * 6;
+    return Math.ceil(x);
+    }
+console.log(dice(3));
+
