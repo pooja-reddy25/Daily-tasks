@@ -80,7 +80,9 @@ console.log(normalize('25-4-2002'));
 //or
 function normalize1(date){
     let newDate = date.replace('-','/');
-    newDate = newDate.replace('-','/')
-    return newDate;
+    let result3 = newDate.replace('-','/')
+    return result3;
 }
 console.log(normalize1('15-1-1997'));
+
+
