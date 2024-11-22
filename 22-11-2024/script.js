@@ -83,3 +83,20 @@ function commonElements(arr1,arr2){
 let array1 = [1,2,3,4,5];
 let array2 = [3,4,5,6,7];
 console.log(commonElements(array1,array2));
+
+//Most frequent item
+function mostFrequent(arr){
+    let frequency={};
+    let maxfreq = 0;
+    let mostFrequent;
+    arr.forEach(item => {
+        frequency[item]=(frequency[item]||0)+1;
+        if(frequency[item]>maxfreq){
+            maxfreq=frequency[item];
+            mostFrequent=item;
+        } 
+    });
+    return mostFrequent;
+}
+const arr3 = [1,2,3,4,2,2,4,6,7,4,2,21];
+console.log(mostFrequent(arr3));
