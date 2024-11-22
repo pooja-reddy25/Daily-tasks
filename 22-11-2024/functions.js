@@ -114,3 +114,12 @@ function dice(){
     }
 console.log(dice(3));
 
+//ParseINT
+function add(s){
+    let operand1 = parseInt(s, 10);
+    let indexPlus = s.indexOf('+');
+    let sAfterPlus = s.substr(indexPlus + 1);
+    let operand2 = parseInt(sAfterPlus , 10);
+    return operand1 + operand2;
+}
+console.log(add('101+100'));
