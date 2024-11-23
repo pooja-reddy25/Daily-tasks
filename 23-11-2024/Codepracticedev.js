@@ -127,6 +127,7 @@ console.log(arr1);
 let arr2 = [];
 for(let i=1;i<=100;i++){
   arr2.push(i);
+  //arr[i]=i+1;
 }
 console.log(arr2);
 console.log(arr2[6]);
