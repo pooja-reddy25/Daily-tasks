@@ -120,3 +120,39 @@ console.log(insertZeros([1, 2, 3]));
 
 let arr1 = new Array(100).fill(0);
 console.log(arr1);
+
+
+//Create a new array named arr of length 100 where each element has a number counting up from 1.
+
+let arr2 = [];
+for(let i=1;i<=100;i++){
+  arr2.push(i);
+}
+console.log(arr2);
+console.log(arr2[6]);
+
+//Create a new array named arr of length 100 where each element is a string of format 00001, 00002, etc
+
+let arr3 = new Array(100);
+for(let i=0;i<100;i++){
+  arr3[i] = (i + 1).toString().padStart(5,'0');
+}
+console.log(arr3);
+
+//Create a shallow copy of object using the spread operator
+
+const shallowCopy = (object) => {
+  return {...object};
+};
+const original = {a: 1,b:2,c:3};
+const copy=shallowCopy(original);
+console.log(copy);
+console.log(copy === original);
+
+
+//If a is greater than b return "ok" otherwise return "try again". a and b are numbers. Use the ternary operator cond ? case : else
+
+function checkValues(a, b) {
+    return a>b?"ok":"try again";
+  }
+  console.log(checkValues(4, 2));
