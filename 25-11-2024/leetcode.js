@@ -14,3 +14,23 @@ var twoSum = function(nums, target) {
 let nums=[2, 7, 11, 15] 
 let  target = 13
 console.log(twoSum(nums, target));
+
+//Given a string s, find the length of the longest substring without repeating characters.
+function lengthofLongestSubstring(s){
+    let maxLength = 0;
+    for(let i=0;i<s.length;i++){
+        let currentSubstring = '';
+        for (let j = i; j < s.length; j++) {
+            let currentChar = s[j];
+            if(currentSubstring.indexOf(currentChar)!== -1){
+                break;
+            }
+            currentSubstring += currentChar;
+        maxLength = Math.max(maxLength, currentSubstring.length);
+    }
+}
+
+return maxLength;
+}
+const s = "abcabcbb";
+console.log(lengthofLongestSubstring(s)); 
