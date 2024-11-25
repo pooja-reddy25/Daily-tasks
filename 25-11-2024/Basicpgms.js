@@ -167,3 +167,15 @@ function compressString(str){
 }
 const Input = "aabbcdaav";
 console.log(compressString(Input));
+
+
+// //var compose = function(functions) {
+//     return function(x) {
+//         let result = x;
+//         for (let i = functions.length - 1; i >= 0; i--) {
+//             result = functionsi; // Apply the function to result
+//         }
+//         return result;
+//     };
+// };
+
