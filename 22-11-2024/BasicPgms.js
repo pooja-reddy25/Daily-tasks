@@ -97,6 +97,7 @@ function mostFrequent(arr){
         } 
     });
     return mostFrequent;
+    
 }
 const arr3 = [1,2,3,4,2,2,4,6,7,4,2,21];
 console.log(mostFrequent(arr3));

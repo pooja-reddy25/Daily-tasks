@@ -60,7 +60,7 @@ function matrixMultiplication(matrix3, matrix4) {
     for (let i = 0; i < matrix3.length; i++) {
         result1[i] = [];
         for (let j = 0; j < matrix4[0].length; j++) {
-            result1[i][j] = 0; // Initialize each element to 0
+            result1[i][j] = 0;
             for (let k = 0; k < matrix3[0].length; k++) {
                 result1[i][j] += matrix3[i][k] * matrix4[k][j];
             }
