@@ -46,6 +46,17 @@ function evenOdd(num){
 }
 console.log(evenOdd(8));
 
+function EvenOdd(arr){
+    let result = [];
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]%2==0){
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
+let array4 = [2,3,4,5,6,7,8];
+console.log(EvenOdd(array4));
 
 //fibonacci series
 function fiboSeries(num){
