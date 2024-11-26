@@ -140,27 +140,6 @@ const number1=[1,2,3];
 number1.forEach(num => console.log(num*2));
 
 
-//this keyword
-console.log(this);
-function test(){
-    console.log(this);
-}
-test();
-const obj4 = {
-    name:"Pooja",
-    greet3(){
-        console.log(this.name);
-    },
-};
-obj4.greet3();
-const obj5 = {
-    name:"Pooja",
-    greet2 : ()=>{
-        console.log(this.name);
-    },
-};
-obj5.greet2();
-
 //Promises
 const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -202,3 +181,13 @@ greet.call(person1,'Hello');
 greet.apply(person,['Hi']);
 const boundGreet = greet.bind(person,'Hey');
 boundGreet();
+
+//Prototype and Inheritance
+function Person1(name){
+    this.name=name;
+}
+Person1.prototype.greet = function(){
+    console.log(`Hello, ${this.name}`);
+};
+const person2 = new Person1("Venkat");
+person2.greet();
