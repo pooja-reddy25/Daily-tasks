@@ -172,16 +172,6 @@ async function displayData() {
 }
 
 
-//Call(),apply(),bind()
-function greet(greeting){
-    console.log(`${greeting}, ${this.name}`);
-}
-const person1 = {name:'Pooja'};
-greet.call(person1,'Hello');
-greet.apply(person,['Hi']);
-const boundGreet = greet.bind(person,'Hey');
-boundGreet();
-
 //Prototype and Inheritance
 function Person1(name){
     this.name=name;
