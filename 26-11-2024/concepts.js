@@ -19,18 +19,6 @@ const greet1 = function(){
 greet1();
 
 
-//Closures : func retains access to the parent scope even after the parent func has finished executing 
-function outer(){
-    let count = 0;
-    return function inner(){
-        count++;
-        console.log(count);
-    };
-}
-const counter = outer();
-counter();
-counter();
-
 //Callbacks
 function fetchdata(callback){
     console.log("Fetching the Data");
