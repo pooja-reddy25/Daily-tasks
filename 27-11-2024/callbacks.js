@@ -57,7 +57,7 @@ setTimeout(()=>{
     },1000);
 },1000);
 
-//Reading and Precessing Array
+//Reading and Processing Array
 function processArray(arr,callback){
     for(let i=0;i<arr.length;i++){
         callback(arr[i],i);
@@ -112,3 +112,50 @@ function processFile(content){
     console.log("File Content:",content);
 }
 readFile("23-10-2024.txt",processFile);
+
+//Custom callback for error handling
+function divide(a,b,callback,errorCallback){
+    if(b===0){
+        errorCallback("division by zero is not allowed.");
+    }else{
+        callback(a/b);
+    }
+}
+function handleResult(result){
+    console.log("Result:",result);
+}
+function handleError(error){
+    console.log("Error:",error);
+}
+divide(10, 2, handleResult, handleError); 
+divide(10, 0, handleResult, handleError);
+
+
+//Square with callback
+function calculateSquare(num,callback){
+    callback(num*num);
+}
+calculateSquare(5,result=>console.log("Square:",result));
+
+setTimeout(()=>console.log("Timer Done"),2000);
+
+function processArray(arr,callback){
+    arr.forEach(callback);
+}
+processArray([1,2,3],num=>console.log(num*2));
+
+setTimeout(()=>{
+    console.log("First Execution");
+    setTimeout(()=>{
+        console.log("Second Execution");
+        setTimeout(()=>{
+            console.log("Third Execution");
+        },1000);
+    },1000);
+},1000);
+
+
+function fetchData(callback){
+    setTimeout(()=> callback({name:"Pooja"}),2000);
+}
+fetchData(data=>console.log("Fetched Data:",data));
