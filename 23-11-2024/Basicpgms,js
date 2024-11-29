@@ -1,0 +1,69 @@
+//find Max and Min
+function maxAndMin(arr){
+    let max=arr[0];
+    let min=arr[0];
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>max) max=arr[i];
+        if(arr[i]<min) min=arr[i];
+    }
+    return {max,min}
+}
+let array = [1,2,3,4,5,6];
+console.log(maxAndMin(array));
+
+//check for value presence
+function checkValues(arr,value){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]===value)
+            return true;
+    }
+    return false;
+}
+let result = checkValues([1, 2, 3, 4], 4);
+console.log(result);
+
+
+//Remove Duplicates
+function removeDuplicates(arr1,arr2){
+    let duplicates=[];
+    for(let i=0;i<arr1.length;i++){
+        for(let j=0;j<arr2.length;j++){
+            if(arr1[i]===arr2[j] && !duplicates.includes(arr1[i])){
+                duplicates.push(arr1[i]);
+            }
+        }
+    }
+    return duplicates;
+}
+let array3 = [1, 2, 3, 4, 5];
+let array4 = [3, 4, 5, 6, 7];
+
+let result1 = removeDuplicates(array3, array4);
+console.log(result1); 
+
+//Largest sum of contagious SubArray
+function largestSubArray(arr){
+    let maxSum=arr[0], currentSum=arr[0];
+    for(let i=0;i<arr.length;i++){
+        currentSum = Math.max(arr[i], currentSum + arr[i]);
+        maxSum =Math.max(currentSum,maxSum); 
+    }
+    return maxSum;
+}
+
+let array5 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(largestSubArray(array5)); 
+
+
+//Count Vowels
+function countVowels(str){
+    let count=0;
+    let vowels = "aeiouAEIOU";
+    for(let i=0;i<str.length;i++){
+        if(vowels.includes(str[i])) count++;
+
+        }
+        return count
+    }
+    let string = "Hello World!";
+    console.log(countVowels(string));

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight{
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button id="myId">Click me</button>
+    <p id="demo">This is a Paragraph</p>
+    <button onclick="showTextContentById()">Show Text By ID</button>
+
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <button onclick="showFirstParagraphByTag()">Show First Paragraph By Tag</button>
+
+    <p class="intro">Introduction Paragraph</p>
+    <p class="intro">Another introduction paragraph</p>
+    <button onclick="showClassText()">Show class Text</button>
+
+    <div id="example"><b>Hello</b> World!</div>
+
+    <ul id="parent">
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>
+      <h1 id="title">Hello, World</h1>
+      <button id="addClassBtn">Add highlight</button>
+      <button id="removeClassBtn">Remove highlight</button>
+
+      <div id="container">
+        <h1>Dynamic DOM Manipulation</h1>
+      </div>
+      <button id="addElement">Add Paragraph</button>
+
+    <script>
+        const element = document.getElementById("myId");
+        element.addEventListener("click",()=>{
+        document.write("Button clicked");
+        });
+    function showTextContentById(){
+        const text = document.getElementById("demo").innerHTML;
+        document.getElementById("demo").innerHTML="Text content of 'demo' is: " + text;
+    }
+
+    function showFirstParagraphByTag(){
+       const firstParagraph = document.getElementsByTagName("p")[1].innerHTML;
+       document.getElementsByTagName("p")[1].innerHTML="Content of the first paragraph: " + firstParagraph;
+    }
+
+    function showClassText(){
+        const elements = document.getElementsByClassName("intro");
+        elements[0].innerHTML="Content of the first element with class 'intro': " + elements[0].innerHTML; 
+    }
+    const element1 = document.getElementById('example');
+    console.log(element1.innerHTML);
+    console.log(element1.innerText); 
+
+    const parent = document.getElementById('parent');
+    parent.addEventListener('click', (event) => {
+      if (event.target.tagName === 'LI') {
+        console.log(`You clicked: ${event.target.textContent}`);
+      }
+    });
+
+//How to use class List
+    const title = document.getElementById('title');
+    const addClassButton = document.getElementById('addClassBtn');
+    const removeClassButton = document.getElementById('removeClassBtn');
+
+    addClassButton.addEventListener('click',()=>{
+        title.classList.add('highlight');
+    });
+
+    removeClassButton.addEventListener('click',()=>{
+        title.classList.remove('highlight');
+    });
+
+//Create and Append
+    const container = document.getElementById('container');
+    const button = document.getElementById('addElement');
+    button.addEventListener('click',()=>{
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'This is a dynamicaly added paragraph';
+        newParagraph.classList.add('dynamic-paragraph');
+        container.appendChild(newParagraph);
+    })
+    </script>
+</body>
+</html>
+
+
+  
