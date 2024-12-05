@@ -101,9 +101,38 @@ function ShoppingList(){
   )
 }
 
+//Rendering Events
+function MyButton1(){
+  function handleClick(){
+    alert('You Clicked me!');
+  }
+  return(
+    <button onClick={handleClick}>Click Me</button>
+  );
+}
 
+function MyButton2(){
+  const[count,setCount] = useState(0);
+  function handleClick1(){
+    setCount(count+1);
+  }
+  return(
+    <button onClick={handleClick1}>Clickec {count} timess</button>
+  )
+}
+ function MyButton3({count,onClick}){
+  return (
+    <button onClick={onClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+ 
 
 export default function MyApp(){
+  const [count,setCount] = useState(0);
+      function handleClick2(){
+        setCount(count + 1); }
   return(
     <div>
       <h1>Welcome to my app</h1>
@@ -114,6 +143,14 @@ export default function MyApp(){
       <Profile/>
       <isLoggedIn/>
       <ShoppingList/>
+      <MyButton1/>
+      <MyButton2/>
+      <div>
+          <h1>Counters that update together</h1>
+          <MyButton3 count={count} onClick={handleClick2}/>
+          <MyButton3 count={count} onClick={handleClick2}/>       
+          </div>
     </div>
-  )
+    
+  );
 }
